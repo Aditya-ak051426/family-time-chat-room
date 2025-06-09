@@ -31,7 +31,7 @@ const WelcomeScreen = ({ onUsernameSet }: WelcomeScreenProps) => {
             Family Chat Room
           </CardTitle>
           <CardDescription className="text-gray-600 mt-2">
-            Welcome to our cozy family space! What should we call you?
+            Welcome to our real-time family chat! Everyone can see messages instantly. What should we call you?
           </CardDescription>
         </CardHeader>
         <CardContent>
