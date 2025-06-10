@@ -9,33 +9,74 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      messages: {
+      conversations: {
         Row: {
           created_at: string
           id: string
-          text: string
-          username: string
+          participant1: string
+          participant2: string
+          updated_at: string
         }
         Insert: {
           created_at?: string
           id?: string
-          text: string
-          username: string
+          participant1: string
+          participant2: string
+          updated_at?: string
         }
         Update: {
           created_at?: string
           id?: string
-          text?: string
-          username?: string
+          participant1?: string
+          participant2?: string
+          updated_at?: string
         }
         Relationships: []
+      }
+      messages: {
+        Row: {
+          conversation_id: string
+          created_at: string
+          deleted_at: string | null
+          id: string
+          sender: string
+          text: string
+        }
+        Insert: {
+          conversation_id: string
+          created_at?: string
+          deleted_at?: string | null
+          id?: string
+          sender: string
+          text: string
+        }
+        Update: {
+          conversation_id?: string
+          created_at?: string
+          deleted_at?: string | null
+          id?: string
+          sender?: string
+          text?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "messages_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_or_create_conversation: {
+        Args: { user1: string; user2: string }
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never

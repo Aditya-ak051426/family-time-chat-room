@@ -28,10 +28,10 @@ const WelcomeScreen = ({ onUsernameSet }: WelcomeScreenProps) => {
             </div>
           </div>
           <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Family Chat Room
+            WhatsApp-Style Chat
           </CardTitle>
           <CardDescription className="text-gray-600 mt-2">
-            Welcome to our real-time family chat! Everyone can see messages instantly. What should we call you?
+            Chat privately with anyone! Start conversations, send messages, and delete your own messages.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -39,7 +39,7 @@ const WelcomeScreen = ({ onUsernameSet }: WelcomeScreenProps) => {
             <div>
               <Input
                 type="text"
-                placeholder="Enter your name..."
+                placeholder="Enter your username..."
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 className="text-center border-2 border-gray-200 focus:border-blue-400 transition-colors duration-200 rounded-xl h-12"
@@ -51,7 +51,7 @@ const WelcomeScreen = ({ onUsernameSet }: WelcomeScreenProps) => {
               className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-200 rounded-xl h-12 text-white font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
               disabled={!inputValue.trim()}
             >
-              Join the Family Chat
+              Start Chatting
             </Button>
           </form>
         </CardContent>

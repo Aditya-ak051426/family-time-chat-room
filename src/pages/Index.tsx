@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import WelcomeScreen from "../components/WelcomeScreen";
-import ChatRoom from "../components/ChatRoom";
+import WhatsAppChat from "../components/WhatsAppChat";
 
 const Index = () => {
   const [username, setUsername] = useState<string>("");
@@ -11,7 +11,7 @@ const Index = () => {
       {!username ? (
         <WelcomeScreen onUsernameSet={setUsername} />
       ) : (
-        <ChatRoom username={username} />
+        <WhatsAppChat username={username} />
       )}
     </div>
   );
